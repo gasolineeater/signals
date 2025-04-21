@@ -5,5 +5,8 @@ int	main(void)
 	int	id;
 
 	id = fork();
-	printf("%d ", getpid());
+	if (id == 0)
+		sleep(1);
+	printf("Current PID: %d parent: %d\n", getpid(), getppid());
+	wait(NULL);
 }
