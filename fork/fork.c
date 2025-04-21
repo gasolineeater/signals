@@ -6,8 +6,7 @@ int	main(void)
 	int	i;
 	int	n;
 	
-	i = 0;
-	n = 
+	i = 1;
 	id = fork();
 	if (id == 0)
 		n = 1;
@@ -17,9 +16,10 @@ int	main(void)
 		wait(NULL); 
 	while (i < n + 5)
 	{
-		printf("%d", i);
+		printf("%d ", i);
 		fflush(stdout);
 		i++;
 	}
-	printf("\n");
+	if (id != 0)
+		printf("\n");
 }
